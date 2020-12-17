@@ -4,6 +4,7 @@
     flex-direction: column;
     height: 350px;
     align-items: center;
+    position: relative;
 
     .item-image {
         width: 100%;
@@ -13,22 +14,26 @@
         margin-bottom: 5px;
         display: flex;
         flex-direction: column-reverse;
+    }
 
-        .add-to-cart {
-            opacity: 0;
-            margin: 0 20% 10% 20%;
-            transition: 0.5s;
-            border: 1px solid black;
-            padding: 20px 1px 20px 1px;
-            background-color: white;
+    .custom-button {
+        width: 80%;
+        opacity: 0.7;
+        position: absolute;
+        top: 255px;
+        display: none;
+    }
+
+    &:hover {
+        .item-image {
+            opacity: 0.8;
         }
-
-        &:hover {
-            .add-to-cart {
-                opacity: 0.75;
-            }
+        .custom-button {
+            opacity: 0.85;
+            display: flex;
         }
     }
+    
 
     .item-information {
         width: 100%;
@@ -40,7 +45,5 @@
         .item-name {
             margin-bottom: 15px;
         }
-        .item-price {
-          }
     }
 }
