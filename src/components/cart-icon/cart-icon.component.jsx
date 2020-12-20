@@ -9,7 +9,6 @@ const CartIcon = () => {
 
     const dispatch = useDispatch();
     const itemCount = useSelector(state => {
-        console.log('I am here')
         return selectCartItemsCount(state)
     })
 

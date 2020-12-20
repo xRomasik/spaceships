@@ -7,20 +7,20 @@ import './App.css';
 import HomePage from './pages/homepage/homepage.component.jsx';
 import Shop from './pages/shop/shop.component.jsx';
 import SignInAndSignUpPage from './pages/sign-in-and-sign-up/sign-in-and-sign-up.component';
+import CheckoutPage from './pages/checkout/checkout.component';
+
 import Header from './components/header/header.component';
 import { auth, createUserProfileDocument } from './firebase/firebase.utils';
 import { setCurrentUser } from './redux/user/user.actions'
+import { selectCurrentUser } from './redux/user/user.selector';
 
 
 function App() {
 
   const dispatch = useDispatch();
-  const user = useSelector(state => state.user.currentUser)
+  const user = useSelector(state => selectCurrentUser(state))
 
   useEffect(() => {
-
-
-
 
     const unsubscribe = auth.onAuthStateChanged(async userAuth => {
       if (userAuth) {
@@ -48,7 +48,8 @@ function App() {
       <Header />
       <Switch>
         <Route exact path='/' component={HomePage} />
-        <Route exact path='/shop' component={Shop} />
+        <Route path='/shop' component={Shop} />
+        <Route exact path='/checkout' component={CheckoutPage} />
         <Route exact path='/signin' render={() => user ? (<Redirect to='/' />) : (<SignInAndSignUpPage />)} />
       </Switch>
     </div>
