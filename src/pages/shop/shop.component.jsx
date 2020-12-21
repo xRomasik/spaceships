@@ -1,24 +1,19 @@
-import React, { useState } from 'react';
-import SHOP_DATA from './shopData'
-import PreviewCollection from '../../components/preview-collection/preview-collection.component';
+import { Route } from 'react-router-dom';
+
+import CollectionsOverview from '../../components/collections-overview/collections-overview.component';
+import CollectionPage from '../collection/collection.component'
+
 import './shop.styles.scss'
 
-const Shop = () => {
-
-    const [spaceships] = useState(SHOP_DATA)
-
+const Shop = ({ match }) => {
+    console.log(match)
     return (
         <div className='shop'>
             <h1>SPACESHIPS</h1>
-            {
-                spaceships.map(({ id, ...otherSpaceshipProps }) => {
-                    return (<PreviewCollection key={id} {...otherSpaceshipProps} />)
-                })
-            }
+            <Route exact path={`${match.path}`} component={CollectionsOverview} />
+            <Route path={`${match.path}/:collectionId`} component={CollectionPage} />
         </div>
     )
-
-
-}
+};
 
 export default Shop;
