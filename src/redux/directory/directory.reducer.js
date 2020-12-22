@@ -1,33 +1,33 @@
 const INITIAL_STATE = {
     sections: [
         {
-            title: 'space-X',
-            imageUrl: 'https://cdn57.androidauthority.net/wp-content/uploads/2018/02/Space-X-falcon-heavy-space-rocket-Quad-HD-wallpapers-2.jpg',
+            title: 'hats',
+            imageUrl: 'https://i.ibb.co/cvpntL1/hats.png',
             id: 1,
             linkUrl: 'shop/hats'
         },
         {
-            title: 'Nasa',
-            imageUrl: 'https://hbr.org/resources/images/article_assets/2018/04/apr18-20-nasa-apollo-proj-archive-01.jpg',
+            title: 'jackets',
+            imageUrl: 'https://i.ibb.co/px2tCc3/jackets.png',
             id: 2,
             linkUrl: 'shop/jackets'
         },
         {
-            title: 'Blue Origin',
-            imageUrl: 'https://spacenews.com/wp-content/uploads/2017/09/newglenn-7m-large.jpg',
+            title: 'sneakers',
+            imageUrl: 'https://i.ibb.co/0jqHpnp/sneakers.png',
             id: 3,
             linkUrl: 'shop/sneakers'
         },
         {
-            title: 'Virgin Galactic',
-            imageUrl: 'https://media.gq-magazine.co.uk/photos/5d1399267fcc8e396881ff30/16:9/w_1920,c_limit/Virgin-Galactic-GQ-2Jun17_b.jpg',
+            title: 'womens',
+            imageUrl: 'https://i.ibb.co/GCCdy8t/womens.png',
             size: 'large',
             id: 4,
             linkUrl: 'shop/womens'
         },
         {
-            title: 'Boeing',
-            imageUrl: 'https://cdn.techexplorist.com/wp-content/uploads/2019/05/starliner.jpg',
+            title: 'mens',
+            imageUrl: 'https://i.ibb.co/R70vBrQ/men.png',
             size: 'large',
             id: 5,
             linkUrl: 'shop/mens'

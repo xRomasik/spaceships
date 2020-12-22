@@ -19,7 +19,6 @@ function App() {
 
   const dispatch = useDispatch();
   const user = useSelector(state => selectCurrentUser(state))
-
   useEffect(() => {
 
     const unsubscribe = auth.onAuthStateChanged(async userAuth => {
@@ -36,10 +35,12 @@ function App() {
         dispatch(setCurrentUser(null))
       }
     })
+
     return function cleanup() {
       unsubscribe()
 
     }
+
   }, [dispatch])
 
 
