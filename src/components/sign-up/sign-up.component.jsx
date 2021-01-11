@@ -1,7 +1,8 @@
-import { useState } from 'react'
-import FormInput from '../form-input/form-input.component'
-import CustomButton from '../custom-button/custom-button.component'
-import { auth, createUserProfileDocument } from '../../firebase/firebase.utils'
+import { useState } from 'react';
+import { useDispatch } from 'react-redux'
+import FormInput from '../form-input/form-input.component';
+import CustomButton from '../custom-button/custom-button.component';
+import { signUpStart } from '../../redux/user/user.actions';
 
 
 import './sign-up.styles.scss'
@@ -15,7 +16,7 @@ const SignUp = () => {
     const [confirmPassword, setConfirmPassword] = useState('');
 
 
-
+    const dispatch = useDispatch();
 
 
     const handleSubmit = async event => {
@@ -24,20 +25,16 @@ const SignUp = () => {
             alert("Passwords don't macth")
             return;
         }
-        try {
-            const { user } = await auth.createUserWithEmailAndPassword(email, password);
-            createUserProfileDocument(user, { displayName })
 
-            setDisplayName('')
-            setEmail('')
-            setConfirmPassword('')
-            setPassword('')
+        dispatch(signUpStart({ displayName, email, password }))
 
-        } catch (error) {
-            console.error(error);
+        setDisplayName('')
+        setEmail('')
+        setConfirmPassword('')
+        setPassword('')
 
-        }
     }
+
 
 
     const handleChange = (event) => {
